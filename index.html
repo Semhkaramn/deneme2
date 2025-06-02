@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cevdet | G&uuml;venilir Siteler</title>
+    <link rel="stylesheet" href="https://cdnimagesrx.xyz/cevdet/app.css?v5.25">
+    <link rel="shortcut icon" href="favicons/cevdet-favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="preloader">
+        <svg height="300" width="300">
+			
+			<circle class="outer" cx="150" cy="150" r="50"></circle>
+			
+			<circle class="inner" cx="150" cy="150" r="50">
+			
+				<animatetransform attributetype="xml" attributename="transform" type="rotate" from="0 150 150" to="360 150 150" dur="2s" repeatcount="indefinite"></animatetransform>
+			</circle>
+			
+		</svg>
+    </div>
+    <div id="app-v-page" :class="{ 'mobile' : is_mobile}" style="display: none;">
+        <header>
+            <div class="container" v-if="!loading">
+                <div class="logo">
+                    <img src="images/cevdet-logo.png" alt="">
+                </div>
+                <div class="social">
+                    <a :href="client.social.discord" class="social-button discord" href="cevdet.html">
+                        <svg viewbox="0 0 32 32" version="1.1"> <path d="M20.992 20.163c-1.511-0.099-2.699-1.349-2.699-2.877 0-0.051 0.001-0.102 0.004-0.153l-0 0.007c-0.003-0.048-0.005-0.104-0.005-0.161 0-1.525 1.19-2.771 2.692-2.862l0.008-0c1.509 0.082 2.701 1.325 2.701 2.847 0 0.062-0.002 0.123-0.006 0.184l0-0.008c0.003 0.050 0.005 0.109 0.005 0.168 0 1.523-1.191 2.768-2.693 2.854l-0.008 0zM11.026 20.163c-1.511-0.099-2.699-1.349-2.699-2.877 0-0.051 0.001-0.102 0.004-0.153l-0 0.007c-0.003-0.048-0.005-0.104-0.005-0.161 0-1.525 1.19-2.771 2.692-2.862l0.008-0c1.509 0.082 2.701 1.325 2.701 2.847 0 0.062-0.002 0.123-0.006 0.184l0-0.008c0.003 0.048 0.005 0.104 0.005 0.161 0 1.525-1.19 2.771-2.692 2.862l-0.008 0zM26.393 6.465c-1.763-0.832-3.811-1.49-5.955-1.871l-0.149-0.022c-0.005-0.001-0.011-0.002-0.017-0.002-0.035 0-0.065 0.019-0.081 0.047l-0 0c-0.234 0.411-0.488 0.924-0.717 1.45l-0.043 0.111c-1.030-0.165-2.218-0.259-3.428-0.259s-2.398 0.094-3.557 0.275l0.129-0.017c-0.27-0.63-0.528-1.142-0.813-1.638l0.041 0.077c-0.017-0.029-0.048-0.047-0.083-0.047-0.005 0-0.011 0-0.016 0.001l0.001-0c-2.293 0.403-4.342 1.060-6.256 1.957l0.151-0.064c-0.017 0.007-0.031 0.019-0.040 0.034l-0 0c-2.854 4.041-4.562 9.069-4.562 14.496 0 0.907 0.048 1.802 0.141 2.684l-0.009-0.11c0.003 0.029 0.018 0.053 0.039 0.070l0 0c2.14 1.601 4.628 2.891 7.313 3.738l0.176 0.048c0.008 0.003 0.018 0.004 0.028 0.004 0.032 0 0.060-0.015 0.077-0.038l0-0c0.535-0.72 1.044-1.536 1.485-2.392l0.047-0.1c0.006-0.012 0.010-0.027 0.010-0.043 0-0.041-0.026-0.075-0.062-0.089l-0.001-0c-0.912-0.352-1.683-0.727-2.417-1.157l0.077 0.042c-0.029-0.017-0.048-0.048-0.048-0.083 0-0.031 0.015-0.059 0.038-0.076l0-0c0.157-0.118 0.315-0.24 0.465-0.364 0.016-0.013 0.037-0.021 0.059-0.021 0.014 0 0.027 0.003 0.038 0.008l-0.001-0c2.208 1.061 4.8 1.681 7.536 1.681s5.329-0.62 7.643-1.727l-0.107 0.046c0.012-0.006 0.025-0.009 0.040-0.009 0.022 0 0.043 0.008 0.059 0.021l-0-0c0.15 0.124 0.307 0.248 0.466 0.365 0.023 0.018 0.038 0.046 0.038 0.077 0 0.035-0.019 0.065-0.046 0.082l-0 0c-0.661 0.395-1.432 0.769-2.235 1.078l-0.105 0.036c-0.036 0.014-0.062 0.049-0.062 0.089 0 0.016 0.004 0.031 0.011 0.044l-0-0.001c0.501 0.96 1.009 1.775 1.571 2.548l-0.040-0.057c0.017 0.024 0.046 0.040 0.077 0.040 0.010 0 0.020-0.002 0.029-0.004l-0.001 0c2.865-0.892 5.358-2.182 7.566-3.832l-0.065 0.047c0.022-0.016 0.036-0.041 0.039-0.069l0-0c0.087-0.784 0.136-1.694 0.136-2.615 0-5.415-1.712-10.43-4.623-14.534l0.052 0.078c-0.008-0.016-0.022-0.029-0.038-0.036l-0-0z"></path> </svg>
+                        Discord
+                    </a>
+                    <a :href="client.social.telegram" class="social-button telegram" href="cevdet.html">
+                        <svg viewbox="0 0 48 48" fill="none"> <path d="M41.4193 7.30899C41.4193 7.30899 45.3046 5.79399 44.9808 9.47328C44.8729 10.9883 43.9016 16.2908 43.1461 22.0262L40.5559 39.0159C40.5559 39.0159 40.3401 41.5048 38.3974 41.9377C36.4547 42.3705 33.5408 40.4227 33.0011 39.9898C32.5694 39.6652 24.9068 34.7955 22.2086 32.4148C21.4531 31.7655 20.5897 30.4669 22.3165 28.9519L33.6487 18.1305C34.9438 16.8319 36.2389 13.8019 30.8426 17.4812L15.7331 27.7616C15.7331 27.7616 14.0063 28.8437 10.7686 27.8698L3.75342 25.7055C3.75342 25.7055 1.16321 24.0823 5.58815 22.459C16.3807 17.3729 29.6555 12.1786 41.4193 7.30899Z"></path> </svg>
+                        Telegram
+                    </a>
+                    <a :href="client.social.twitch" class="social-button twitch" href="cevdet.html">
+                        <svg viewbox="-0.5 0 20 20" version="1.1"> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-141.000000, -7399.000000)"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M97,7249 L99,7249 L99,7244 L97,7244 L97,7249 Z M92,7249 L94,7249 L94,7244 L92,7244 L92,7249 Z M102,7250.307 L102,7241 L88,7241 L88,7253 L92,7253 L92,7255.953 L94.56,7253 L99.34,7253 L102,7250.307 Z M98.907,7256 L94.993,7256 L92.387,7259 L90,7259 L90,7256 L85,7256 L85,7242.48 L86.3,7239 L104,7239 L104,7251.173 L98.907,7256 Z" id="twitch-[#182]"> </path> </g> </g> </g> </svg>
+                        Twitch
+                    </a>
+                    <a :href="client.social.instagram" class="social-button instagram" href="cevdet.html">
+                        <svg viewbox="0 0 20 20" version="1.1"> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-340.000000, -7439.000000)"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M289.869652,7279.12273 C288.241769,7279.19618 286.830805,7279.5942 285.691486,7280.72871 C284.548187,7281.86918 284.155147,7283.28558 284.081514,7284.89653 C284.035742,7285.90201 283.768077,7293.49818 284.544207,7295.49028 C285.067597,7296.83422 286.098457,7297.86749 287.454694,7298.39256 C288.087538,7298.63872 288.809936,7298.80547 289.869652,7298.85411 C298.730467,7299.25511 302.015089,7299.03674 303.400182,7295.49028 C303.645956,7294.859 303.815113,7294.1374 303.86188,7293.08031 C304.26686,7284.19677 303.796207,7282.27117 302.251908,7280.72871 C301.027016,7279.50685 299.5862,7278.67508 289.869652,7279.12273 M289.951245,7297.06748 C288.981083,7297.0238 288.454707,7296.86201 288.103459,7296.72603 C287.219865,7296.3826 286.556174,7295.72155 286.214876,7294.84312 C285.623823,7293.32944 285.819846,7286.14023 285.872583,7284.97693 C285.924325,7283.83745 286.155174,7282.79624 286.959165,7281.99226 C287.954203,7280.99968 289.239792,7280.51332 297.993144,7280.90837 C299.135448,7280.95998 300.179243,7281.19026 300.985224,7281.99226 C301.980262,7282.98483 302.473801,7284.28014 302.071806,7292.99991 C302.028024,7293.96767 301.865833,7294.49274 301.729513,7294.84312 C300.829003,7297.15085 298.757333,7297.47145 289.951245,7297.06748 M298.089663,7283.68956 C298.089663,7284.34665 298.623998,7284.88065 299.283709,7284.88065 C299.943419,7284.88065 300.47875,7284.34665 300.47875,7283.68956 C300.47875,7283.03248 299.943419,7282.49847 299.283709,7282.49847 C298.623998,7282.49847 298.089663,7283.03248 298.089663,7283.68956 M288.862673,7288.98792 C288.862673,7291.80286 291.150266,7294.08479 293.972194,7294.08479 C296.794123,7294.08479 299.081716,7291.80286 299.081716,7288.98792 C299.081716,7286.17298 296.794123,7283.89205 293.972194,7283.89205 C291.150266,7283.89205 288.862673,7286.17298 288.862673,7288.98792 M290.655732,7288.98792 C290.655732,7287.16159 292.140329,7285.67967 293.972194,7285.67967 C295.80406,7285.67967 297.288657,7287.16159 297.288657,7288.98792 C297.288657,7290.81525 295.80406,7292.29716 293.972194,7292.29716 C292.140329,7292.29716 290.655732,7290.81525 290.655732,7288.98792" id="instagram-[#167]"> </path> </g> </g> </g> </svg>
+                        Instagram
+                    </a>
+                    <a :href="client.social.youtube" class="social-button youtube" href="cevdet.html">
+                        <svg version="1.1" id="Layer_1" viewbox="-271 311.2 256 179.8" xml:space="preserve"> <path d="M-59.1,311.2h-167.8c0,0-44.1,0-44.1,44.1v91.5c0,0,0,44.1,44.1,44.1h167.8c0,0,44.1,0,44.1-44.1v-91.5  C-15,355.3-15,311.2-59.1,311.2z M-177.1,450.3v-98.5l83.8,49.3L-177.1,450.3z"></path> </svg>
+                        Youtube
+                    </a>
+                    <a :href="client.social.skype" class="social-button skype" href="cevdet.html">
+                        <svg viewbox="0 0 512 512" xml:space="preserve"> <g id="7935ec95c421cee6d86eb22ecd12cc09"> <path style="display: inline;" d="M493.43,310.244c3.631-16.618,5.563-33.859,5.563-51.562   c0-132.728-107.588-240.317-240.316-240.317c-14.009,0-27.732,1.222-41.094,3.518C196.099,8.359,170.686,0.5,143.427,0.5   C66.465,0.5,4.075,62.903,4.075,139.865c0,25.725,6.999,49.803,19.163,70.487c-3.194,15.607-4.878,31.775-4.878,48.331   c0,132.728,107.589,240.316,240.316,240.316c15.047,0,29.742-1.396,44.014-4.042c19.613,10.555,42.043,16.543,65.871,16.543   c76.975,0,139.365-62.391,139.365-139.365C507.926,349.903,502.699,328.895,493.43,310.244z M381.922,373.52   c-11.104,15.745-27.533,28.208-48.816,37.053c-21.072,8.758-46.334,13.199-75.091,13.199c-34.52,0-63.463-6.063-86.043-18.039   c-16.144-8.733-29.467-20.535-39.573-35.119c-10.205-14.733-15.382-29.33-15.382-43.428c0-8.808,3.381-16.442,10.03-22.681   c6.587-6.2,15.021-9.331,25.076-9.331c8.259,0,15.382,2.47,21.171,7.36c5.527,4.69,10.28,11.627,14.085,20.585   c4.267,9.756,8.908,17.989,13.811,24.477c4.716,6.238,11.49,11.478,20.148,15.582c8.721,4.13,20.46,6.213,34.907,6.213   c19.874,0,36.167-4.242,48.418-12.613c11.963-8.158,17.775-17.965,17.775-29.979c0-9.494-3.043-16.941-9.281-22.793   c-6.549-6.113-15.156-10.879-25.649-14.147c-10.915-3.393-25.749-7.073-44.076-10.916c-24.938-5.339-46.135-11.677-62.989-18.851   c-17.229-7.323-31.126-17.49-41.282-30.216c-10.317-12.899-15.544-29.105-15.544-48.156c0-18.152,5.489-34.52,16.318-48.63   c10.741-14.022,26.436-24.914,46.646-32.386c19.948-7.373,43.665-11.116,70.5-11.116c21.469,0,40.332,2.482,56.09,7.385   c15.83,4.928,29.193,11.59,39.684,19.786c10.568,8.259,18.428,17.092,23.367,26.261c4.99,9.282,7.512,18.489,7.512,27.421   c0,8.583-3.307,16.393-9.855,23.18c-6.588,6.849-14.885,10.33-24.678,10.33c-8.896,0-15.869-2.183-20.697-6.462   c-4.504-3.967-9.17-10.18-14.348-19.087c-6-11.39-13.248-20.36-21.569-26.685c-8.072-6.151-21.571-9.27-40.122-9.27   c-17.229,0-31.226,3.468-41.631,10.28c-10.03,6.575-14.896,14.123-14.896,23.042c0,5.477,1.56,10.043,4.791,13.985   c3.418,4.167,8.234,7.834,14.322,10.878c6.313,3.181,12.825,5.701,19.337,7.498c6.687,1.859,17.902,4.603,33.259,8.159   c19.45,4.167,37.327,8.846,53.134,13.898c15.994,5.127,29.828,11.439,41.096,18.775c11.514,7.498,20.635,17.116,27.096,28.619   c6.488,11.527,9.768,25.774,9.768,42.317C398.738,339.687,393.088,357.738,381.922,373.52z"> </path> </g> </svg>
+                        Skype
+                    </a>
+                </div>
+                <ul class="links">
+                        <li>
+                            <a target="_blank" href="bilet.html">
+                                <div class="left">
+                                    <img src="images/cevdet-ic-2.png" width="30">
+                                </div>
+                                <div class="right">
+                                    <p>ETK&#304;NL&#304;K</p>
+                                    <small>Bilet Etkinlikleri</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://t.me/cevdetduyuru">
+                                <div class="left">
+                                    <img src="images/cevdet-ic-3.png" width="30">
+                                </div>
+                                <div class="right">
+                                    <p>ETK&#304;NL&#304;K KANALIMIZ</p>
+                                    <small>Telegram</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://t.me/cevdetio">
+                                <div class="left">
+                                    <img src="images/cevdet-ic-1.png" width="30">
+                                </div>
+                                <div class="right">
+                                    <p>SOHBET KANALIMIZ</p>
+                                    <small>Telegram</small>
+                                </div>
+                            </a>
+                        </li>
+                </ul>
+            </div>
+        </header>
+        <div class="container" v-if="!loading">
+
+        <div id="swiper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                <a :href="_.find(client.sites, ['site', slider.site]).url" :class="['cat' + slider.id, 'banner' + slider.grid]" v-for="(slider,sliderKey) in _.orderBy(slider.sites, [item =&gt; parseInt(item.sort)], ['asc'])" target="_blank" class="swiper-slide" href="cevdet.html"><img :src="_.find(client.sites, ['site', slider.site]).slider_img" width="100%" src="images/gir.gg-cevdet"></a>
+                </div>
+            </div>
+            
+            </div>
+            <a target="_blank" v-if="leftFix.sites[0]" :style="'--site-color: ' + _.find(client.sites, ['site', leftFix.sites[0].site]).color" :href="_.find(client.sites, ['site', leftFix.sites[0].site]).url" class="fix-side left" href="cevdet.html">
+              <div class="top"><img :src="client.cdn_url + _.find(client.sites, ['site', leftFix.sites[0].site]).site.replace(' DUPLICATE', '') + '.png'" src="images/gir.gg-cevdet"></div>
+              <div class="bottom"><img :src="client.cdn_url + _.find(client.sites, ['site', leftFix.sites[0].site]).site.replace(' DUPLICATE', '') + '.png'" src="images/gir.gg-cevdet"></div>
+              <div class="center">
+                <div class="stars">
+                    <img src="images/cevdet-stars.png" width="100">
+                </div>
+                <div class="logo">
+                    <img :src="client.cdn_url + _.find(client.sites, ['site', leftFix.sites[0].site]).site.replace(' DUPLICATE', '') + '.png'" src="images/gir.gg-cevdet">
+                </div>
+                <div class="promo">
+                  <span>{{ _.find(client.sites, ['site', leftFix.sites[0].site]).desc[0] }}</span> <br> {{ _.find(client.sites, ['site', leftFix.sites[0].site]).desc[1] }}
+                </div>
+                <div class="button">Giri&#351; Yap</div>
+              </div>
+            </a>
+
+            <a target="_blank" v-if="rightFix.sites[0]" :style="'--site-color: ' + _.find(client.sites, ['site', rightFix.sites[0].site]).color" :href="_.find(client.sites, ['site', rightFix.sites[0].site]).url" class="fix-side right" href="cevdet.html">
+              <div class="top"><img :src="client.cdn_url + _.find(client.sites, ['site', rightFix.sites[0].site]).site.replace(' DUPLICATE', '') + '.png'" src="images/gir.gg-cevdet"></div>
+              <div class="bottom"><img :src="client.cdn_url + _.find(client.sites, ['site', rightFix.sites[0].site]).site.replace(' DUPLICATE', '') + '.png'" src="images/gir.gg-cevdet"></div>
+              <div class="center">
+                <div class="stars">
+                    <img src="images/cevdet-stars.png" width="100">
+                </div>
+                <div class="logo">
+                    <img :src="client.cdn_url + _.find(client.sites, ['site', rightFix.sites[0].site]).site.replace(' DUPLICATE', '') + '.png'" src="images/gir.gg-cevdet">
+                </div>
+                <div class="promo">
+                  <span>{{ _.find(client.sites, ['site', rightFix.sites[0].site]).desc[0] }}</span> <br> {{ _.find(client.sites, ['site', rightFix.sites[0].site]).desc[1] }}
+                </div>
+                <div class="button">Giri&#351; Yap</div>
+              </div>
+            </a>
+
+            <div class="row vip" :class="['cat' + vip.id, 'banner' + vip.grid]">
+                <div class="col" v-if="_.find(client.sites, ['site', site.site])" v-for="(site,siteKey) in _.orderBy(vip.sites, [item =&gt; parseInt(item.sort)], ['asc'])">
+                    <a target="_blank" :href="_.find(client.sites, ['site', site.site]).url" class="item" :style="'--site-color: ' + _.find(client.sites, ['site', site.site]).color" href="cevdet.html">
+                        <div class="left">
+                            <img :src="client.cdn_url + _.find(client.sites, ['site', site.site]).site + '.png'" width="150" src="images/gir.gg-cevdet">
+                            <div class="text">
+                            {{ _.find(client.sites, ['site', site.site]).desc[0] }} {{ _.find(client.sites, ['site', site.site]).desc[1] }}
+                            <div> <small>S&#304;ZE &Ouml;ZEL PROMOSYONLAR</small></div>
+                            </div>
+                            <div class="button">G&#304;R&#304;&#350; YAP</div>
+                        </div>
+                        <div class="vip-img">
+                           <img src="images/cevdet-vip.png" width="100">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row diamond" :class="['cat' + vip.id, 'banner' + diamond.grid]">
+                <div class="col" v-if="_.find(client.sites, ['site', site.site])" v-for="(site,siteKey) in _.orderBy(diamond.sites, [item =&gt; parseInt(item.sort)], ['asc'])">
+                    <a target="_blank" :href="_.find(client.sites, ['site', site.site]).url" class="item" :style="'--site-color: ' + _.find(client.sites, ['site', site.site]).color" href="cevdet.html">
+                        <div class="content">
+                            <div class="icon">
+                                <img src="images/cevdet-diamond.png" width="100">
+                            </div>
+                          
+                            <div class="left">
+                                <img :src="client.cdn_url + _.find(client.sites, ['site', site.site]).site + '.png'" width="150" src="images/gir.gg-cevdet">
+                                <div class="text">
+                                {{ _.find(client.sites, ['site', site.site]).desc[0] }} {{ _.find(client.sites, ['site', site.site]).desc[1] }}
+                                <div> <small>S&#304;ZE &Ouml;ZEL PROMOSYONLAR</small></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button">G&#304;R&#304;&#350; YAP</div>
+                    </a>
+                </div>
+            </div>
+          <div class="row normal" :class="['cat' + list.id, 'banner' + list.grid]">
+            <div class="col" v-if="_.find(client.sites, ['site', site.site])" v-for="(site,siteKey) in _.orderBy(list.sites, [item =&gt; parseInt(item.sort)], ['asc'])">
+                <a target="_blank" :href="_.find(client.sites, ['site', site.site]).url" class="item" :style="'--site-color: ' + _.find(client.sites, ['site', site.site]).color" href="cevdet.html">
+                  <div class="top">
+                    <img :src="client.cdn_url + _.find(client.sites, ['site', site.site]).site + '.png'" width="150" src="images/gir.gg-cevdet">
+                  </div>
+                  <div class="text">
+                    <span>{{ _.find(client.sites, ['site', site.site]).desc[0] }}</span> <br> {{ _.find(client.sites, ['site', site.site]).desc[1] }}
+                  </div>
+                  <div class="button">G&#304;R&#304;&#350; YAP</div>
+                </a>
+              </div>
+          </div>
+          <div v-if="bottomFix">
+            <div class="bottom-fixed" v-show="bottomShow" v-if="bottomActive == bottomKey" :style="'border-color: ' + _.find(client.sites, ['site', bottom.site]).color" v-for="(bottom, bottomKey) in _.orderBy(bottomFix.sites, [bottom =&gt; parseInt(bottom.sort)], ['asc'])" :key="bottomKey">
+                <div class="button">
+                <div class="close" false>
+                    <svg viewbox="0 0 24 24" fill="none"> <g id="Edit / Close_Circle"> <path id="Vector" d="M9 9L11.9999 11.9999M11.9999 11.9999L14.9999 14.9999M11.9999 11.9999L9 14.9999M11.9999 11.9999L14.9999 9M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </svg>
+                </div>
+                </div>
+                <div class="logo">
+                <img :src="client.cdn_url + _.find(client.sites, ['site', bottom.site]).site + '.png'" width="150" src="images/gir.gg-cevdet">
+                </div>
+                <div class="center">
+                <h1 :style="'color: ' + _.find(client.sites, ['site', bottom.site]).color">{{ _.find(client.sites, ['site', bottom.site]).desc[0] }}</h1>
+                    <p>{{ _.find(client.sites, ['site', bottom.site]).desc[1] }}</p>
+                </div>
+                <a :href="_.find(client.sites, ['site', bottom.site]).url" :style="'background: ' + _.find(client.sites, ['site', bottom.site]).color" target="_blank" href="cevdet.html">
+                &#350;&#304;MD&#304; G&#304;R&#304;&#350; YAP
+                </a>
+            </div>
+            </div>
+           <div v-if="!_.isNull(notifyFix)">
+            <div class="notify-fixed" v-show="notifyShow" v-if="notifyActive == notifyKey" :style="'border-color: ' + _.find(client.sites, ['site', notify.site]).color" v-for="(notify, notifyKey) in _.orderBy(notifyFix.sites, [notify =&gt; parseInt(notify.sort)], ['asc'])" :key="notifyKey">
+                <div class="button">
+                    <div class="close" false>
+                    <svg viewbox="0 0 24 24" fill="none"> <g id="Edit / Close_Circle"> <path id="Vector" d="M9 9L11.9999 11.9999M11.9999 11.9999L14.9999 14.9999M11.9999 11.9999L9 14.9999M11.9999 11.9999L14.9999 9M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </svg>
+                    </div>
+                </div>
+                <div class="logo">
+                    <img :src="client.cdn_url + _.find(client.sites, ['site', notify.site]).site + '.png'" width="150" src="images/gir.gg-cevdet">
+                </div>
+                <h3 style="font-size:12px;margin: 0px;margin-top: 10px;">S&#304;ZE B&#304;R MESAJI VAR !</h3>
+                <div class="center" style="margin: 0px;">
+                    <h1 style="margin: 0px;" :style="'color: ' + _.find(client.sites, ['site', notify.site]).color">{{ _.find(client.sites, ['site', notify.site]).desc[0] }}</h1>
+                    <p style="margin-bottom: 0px;">{{ _.find(client.sites, ['site', notify.site]).desc[1] }}</p>
+                </div>
+                <small style="margin-bottom: 5px; opacity: 0.5;">&#350;imdi Yararlan&#305;n!</small>
+                <a :href="_.find(client.sites, ['site', notify.site]).url" :style="'background: ' + _.find(client.sites, ['site', notify.site]).color" target="_blank" href="cevdet.html">
+                    &#350;&#304;MD&#304; G&#304;R&#304;&#350; YAP
+                </a>
+                </div>
+            </div>
+            <div class="footer-c"><div class="licence">
+                CEVDET t&uuml;m haklar&#305; sakl&#305;d&#305;r.
+                </div> <a target="_blank" href="https://rxfast.co/contact" class="cpyrght">
+                This App Provided By <img src="images/logo-rx.png"></a></div>
+        </div>
+        <div class="overlay" v-show="!_.isEmpty(notifyFix.sites)" v-if="notifyShow"></div>
+    </div>
+    <script src="js/2.5.17-vue.min.js"></script>
+    <script src="js/lodash@4.17.20-lodash.min.js"></script>
+    <script src="js/logo-reset.js"></script>
+    <script src="js/dist-axios.min.js"></script>
+    <script src="js/swiper-swiper-bundle.min.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app-v-page',
+            mounted(){
+                window.onload = function() {
+                  document.getElementById('preloader').style.display = 'none';
+                  document.getElementById('app-v-page').style.display = 'block';
+
+                  var nav = document.querySelector('#app-v-page');
+                    var navTop = nav.offsetTop;
+                        
+                    function navFixed(e) {
+                        if(window.scrollY - 75 >= navTop) {
+                            document.querySelector('#app-v-page').classList.add('is-fixed');
+                        } else {
+                            document.querySelector('#app-v-page').classList.remove('is-fixed');
+                        }
+                    }
+                    window.addEventListener('scroll', navFixed);
+                };
+            },
+            created(){
+                this.loading = true;
+                axios.get('https://pay.rxstreamer.xyz/data/344')
+                .then((response) => {
+                        this.client = response.data.html
+                        this.leftFix = _.find(this.client.categories, ['id', 1706206125458]);
+                        this.rightFix = _.find(this.client.categories, ['id', 1706206145587]);
+                        this.slider = _.find(this.client.categories, ['id', 1706206176170]);
+                        this.vip = _.find(this.client.categories, ['id', 1706206255751]);
+                        this.strip = _.find(this.client.categories, ['id', 1710236499016]);
+                        this.diamond = _.find(this.client.categories, ['id', 1706206296219]);
+                        this.bottomFix = _.find(this.client.categories, ['id', 1706406420307]);
+                        this.notifyFix = _.find(this.client.categories, ['id', 1706406449314]);
+                        this.list = _.find(this.client.categories, ['id', 1706206832872]);
+                        this.loading = false;
+                    setTimeout(() => {
+                        const swiper = new Swiper('.swiper-container', {
+                            slidesPerView: 1,
+                            autoplay: true,
+                            pagination: {
+                                el: '.swiper-pagination',
+                                type: 'fraction',
+                            },
+                            navigation: {
+                                nextEl: '.swiper-button-next',
+                                prevEl: '.swiper-button-prev',
+                            },
+                        });
+                    }, 50);
+                    setTimeout(() => {
+                        this.notifyShow = true;
+                        if(this.notifyFix != null && this.notifyFix.sites != null){
+                            setInterval(() => {
+                                _.forEach(this.notifyFix.sites,((site,siteKey) => {
+                                    if(parseInt(_.size(this.notifyFix.sites) - 1) == parseInt(this.notifyActive)){
+                                        this.notifyActive = 0;
+                                        return false
+                                    }else if(this.notifyActive < siteKey){
+                                        this.notifyActive = parseInt(siteKey);
+                                        return false;
+                                    }
+                                }));
+                            }, 5000);
+                        }
+                    }, 2500);
+                    if(this.bottomFix != null){
+                        setInterval(() => {
+                            _.forEach(this.bottomFix.sites,((site,siteKey) => {
+                                if(parseInt(_.size(this.bottomFix.sites) - 1) == parseInt(this.bottomActive)){
+                                    this.bottomActive = 0;
+                                    return false
+                                }else if(this.bottomActive < siteKey){
+                                    this.bottomActive = parseInt(siteKey);
+                                    return false;
+                                }
+                            }));
+                        }, 3000);
+                    }
+                    if(!_.isNull(this.client.background)){
+                        document.body.style.backgroundImage = 'url(' + this.client.background + ')'
+                    }
+                    
+                })
+            },
+            data() {
+                return {
+                    strip:null,
+                    leftFix:null,
+                    rightFix:null,
+                    bottomFix:null,
+                    notifyFix:null,
+                    slider:null,
+                    loading:false,
+                    bottomActive:0,
+                    bottomShow:true,
+                    notifyShow:false,
+                    notifyActive:0,
+                    list:null,
+                    is_mobile: Math.min(window.screen.width, window.screen.height) < 768 || navigator.userAgent.indexOf("Mobi") > -1,
+                    client:{},
+                };
+            },
+        })
+    </script>
+</body>
+</html>

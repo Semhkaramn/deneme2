@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --site-color: #ff6b35;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Rajdhani', sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .preloader {
+    @apply fixed inset-0 z-50 flex items-center justify-center;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  }
+
+  .preloader svg {
+    @apply animate-spin;
+  }
+
+  .preloader .outer {
+    fill: none;
+    stroke: #334155;
+    stroke-width: 2;
+  }
+
+  .preloader .inner {
+    fill: none;
+    stroke: #ff6b35;
+    stroke-width: 3;
+    stroke-dasharray: 50 200;
+    stroke-dashoffset: -25;
+  }
+
+  .social-button {
+    @apply flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-300 text-white hover:scale-105;
+    text-decoration: none;
+  }
+
+  .social-button.discord {
+    @apply bg-[#5865F2] hover:bg-[#4752C4];
+  }
+
+  .social-button.telegram {
+    @apply bg-[#0088cc] hover:bg-[#006aa3];
+  }
+
+  .social-button.twitch {
+    @apply bg-[#9146FF] hover:bg-[#7828C8];
+  }
+
+  .social-button.instagram {
+    @apply bg-gradient-to-r from-[#E4405F] to-[#F77737] hover:from-[#C73650] hover:to-[#E5632A];
+  }
+
+  .social-button.youtube {
+    @apply bg-[#FF0000] hover:bg-[#CC0000];
+  }
+
+  .social-button.skype {
+    @apply bg-[#00AFF0] hover:bg-[#0099D4];
+  }
+
+  .social-button svg {
+    @apply w-5 h-5 fill-current;
+  }
+
+  .site-card {
+    @apply bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-slate-700 p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl;
+    border-color: var(--site-color);
+  }
+
+  .site-card:hover {
+    box-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
+  }
+
+  .site-button {
+    @apply px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 hover:scale-105;
+    background: var(--site-color);
+  }
+
+  .site-button:hover {
+    filter: brightness(1.1);
+  }
+
+  .vip-badge {
+    @apply absolute -top-2 -right-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-sm font-bold;
+  }
+
+  .diamond-badge {
+    @apply absolute -top-2 -right-2 bg-gradient-to-r from-blue-400 to-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold;
+  }
+
+  .fixed-side {
+    @apply fixed top-1/2 -translate-y-1/2 w-20 h-80 z-40 transition-all duration-300 hover:w-24;
+    background: linear-gradient(135deg, var(--site-color), rgba(255, 107, 53, 0.8));
+  }
+
+  .fixed-side.left {
+    @apply left-4;
+  }
+
+  .fixed-side.right {
+    @apply right-4;
+  }
+
+  .notification-popup {
+    @apply fixed bottom-6 right-6 bg-slate-800 border-2 rounded-xl p-6 z-50 max-w-sm animate-in slide-in-from-bottom-5;
+    border-color: var(--site-color);
+    box-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
+  }
+
+  .hero-slider {
+    @apply relative h-64 md:h-80 lg:h-96 rounded-xl overflow-hidden;
+  }
+
+  .hero-slide {
+    @apply absolute inset-0 bg-cover bg-center transition-opacity duration-500;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-orange-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-orange-400;
+}
